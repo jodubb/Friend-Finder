@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../data/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            Fill Out this Form
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Enter Name">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Link To Photo Image</label>
+                    <input type="text" class="form-control" id="link" placeholder="link">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Question 1</label>
+                    <select class="form-control" id="Q1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Question 2</label>
+                    <select class="form-control" id="Q2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Question 3</label>
+                    <select class="form-control" id="Q3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- user is using form and submit button -->
+    <script>
+        $(document).ready(function () {
+            $('.submit').click(function (event) {
+                event.preventDefault();
+
+
+                // gathering new user input
+                var newFriend = {
+                    "name": $("#name").val().trim(),
+                    "photo": $("#link").val().trim(),
+                    "scores": [
+                        $("#Q1").val().trim(),
+                        $("#Q2").val().trim(),
+                        $("#Q3").val().trim(),
+                        // $("#Q4").val().trim(),
+                        // $("#Q5").val().trim(),
+                        // $("#Q6").val().trim(),
+                        // $("#Q7").val().trim(),
+                        // $("#Q8").val().trim(),
+                        // $("#Q9").val().trim(),
+                        // $("#Q10").val().trim(),
+                    ]
+                };
+                
+
+                // sending new user to backend
+                $.post("/api/friends", newFriend, function(data) {
+                    console.log(data) 
+                    
+                })
+
+
+
+
+            });
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
