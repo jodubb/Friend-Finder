@@ -20,9 +20,11 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
 
         var userInput = req.body;
-        console.log(userInput);
+        console.log(userInput.name);
+        console.log(userInput.photo);
         // handle comparison here to find perfect match
-        var userResponses = scores.length;
+        var userResponses = userInput.scores;
+        console.log(userResponses)
         var matchName = "";
         var matchImage = "";
         var difference = 10000;
@@ -34,7 +36,7 @@ module.exports = function (app) {
 
             // going thru the user responses
            var eachDiff = 0;
-           console.log(.name);
+           
             for (let x = 0; x < userResponses.length; x++) {
                 eachDiff += (Math.abs(friends[i].scores[x]- userResponses[x]));
                 
@@ -42,7 +44,7 @@ module.exports = function (app) {
     if (eachDiff < difference){
         difference = eachDiff;
         matchName = friends[i].name;
-        matchImage = friends[i].name;
+        matchImage = friends[i].photo;
 
     }
 
