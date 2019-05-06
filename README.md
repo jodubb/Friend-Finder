@@ -1,5 +1,6 @@
 # Friend-Finder
 An App for Friend Seeking!
+(Think Eharmony or Match.com)
 
 
 Terrible at making new friends?
@@ -15,5 +16,6 @@ Join Friend Finder today!
 
 
 # Demo
-Here is the Heroku link to try it out!
+Here is the Heroku link to try it out! 
+https://enigmatic-ravine-20962.herokuapp.com/
 
