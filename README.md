@@ -6,7 +6,7 @@ Terrible at making new friends?
 Socially awkward?
 Really shy?
 Too busy to socialize?
-Worry no more becuase Friend Finder is here to save your social woes!
+Worry no more because Friend Finder is here to save your social woes!
 
 Simply enter your name and a cute photo of yourself, fill out the survey the best you can and Friend Finder will do the rest.
 We'll match you with other friend seekers on our site that best meet your compatibility. 
